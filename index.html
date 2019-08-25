@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <script src="/socket.io/socket.io.js"></script>
+
+<script>
+
+var socket = io();
+
+socket.emit('kopet', 'stats');
+socket.on('kopet', function(msg){
+    document.querySelector('[id="messages"]').innerHTML = msg
+});
+
+socket.emit('kopet2', 'ass');
+socket.on('kopet2', function(msg){
+    document.querySelector('[id="kvt"]').innerHTML = msg
+});
+
+</script>
+  </head>
+  <body>
+    c:<div id="messages"></div><br/>
+    d:<div id="kvt"></div>
+  </body>
+</html>
